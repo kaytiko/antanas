@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <router-view v-slot="{ Component }">
+    <transition name="slide" mode="out-in" @after-leave="startAnim">
+      <component :is="Component" />
+    </transition>
+</router-view>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<style>
+.slide-enter-active,.slide-leave-active {
+    transition: all 1s ease
 }
 
-nav {
-  padding: 30px;
+.slide-enter-to,.slide-leave-from {
+    opacity: 1
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+.slide-enter-from,.slide-leave-to {
+    opacity: 0
+}
+</style>
+<script>
+// import GalleryItem from '@/components/GalleryItem.vue'
+import * as animation from "../src/assets/layout/js/animation.js";  
 
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+  mounted() {
+    this.startAnim();
+  },
+  methods: {
+    startAnim() {
+      animation.headerAnim();
+      animation.deleteAnim();
     }
   }
 }
-</style>
+</script>

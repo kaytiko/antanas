@@ -1,0 +1,150 @@
+.header {
+    height: 100vh;
+    max-height: 90lvh;
+    min-height: rem(400px);
+    
+    @include tablet {
+        max-height: vw(760px);
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__wrapper {
+        padding: rem(16px) 0;
+    }
+
+    &__logo {
+    }
+
+    &__date {
+        display: none;
+
+        @include tablet {
+            display: block;
+            grid-column: 8 / 9;
+        }
+    }
+
+    &__info {
+        display: none;
+
+        @include tablet {
+            display: block;
+            grid-column: 9 / 11;
+        }
+
+        @include laptop {
+            max-width: vw(176px);
+        }
+    }
+
+    &__switcher {
+        display: flex;
+        gap: rem(6px);
+        grid-column: 4 / 6;
+        text-align: right;
+
+        @include tablet {
+            grid-column: 11 / 13;
+            text-align: left;
+        }
+
+        a {
+            color: var(--text-color);
+            opacity: 0.5;
+            transition: var(--fast);
+        }
+        
+        .header__switcher--active {
+            text-decoration: underline;
+            opacity: 1;
+        }
+
+        &-item:nth-child(2) a {
+            text-decoration: none;
+            pointer-events: none;
+        }
+
+        &-item:hover a {
+            opacity: 1;
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        grid-column: 6 / -1;
+        padding: vw(4px) 0 0 0;
+        
+        @include tablet {
+            grid-column: 14 / -1;
+        }
+
+        svg {
+            width: 90%;
+            height: auto;
+        }
+    }
+
+    &__banner {
+    }
+}
+
+.page__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--text-color);
+    color: white;
+    z-index: 100;
+
+    &-container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 0.625rem;
+    }
+    
+    &-title {
+        grid-column: span 14;
+        font-size: 1rem;
+        max-width: 800px;
+
+        a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @include tablet {
+            font-size: vw(30px);
+        }
+    }
+
+    &-close {
+        position: absolute;
+        top: 1rem;
+        right: 0.625rem;
+        width: rem(45px);
+
+        @include tablet {
+            width: vw(45px);
+            right: vw(60px);
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

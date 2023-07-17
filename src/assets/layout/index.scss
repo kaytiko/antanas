@@ -1,0 +1,14 @@
+@import "./scss/global/reset";
+@import "./scss/global/variables";
+@import "./scss/global/pxtorem";
+@import "./scss/global/mixin";
+@import "./scss/global/global.scss";
+@import "./scss/global/font.scss";
+@import "./scss/global/container.scss";
+
+@import "scss/blocks/common/header.scss";
+@import "scss/blocks/common/footer.scss";
+
+@import "scss/blocks/banner.scss";
+@import "scss/blocks/subscribe.scss";
+@import "scss/blocks/gallery.scss";
