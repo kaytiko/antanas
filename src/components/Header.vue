@@ -3,8 +3,8 @@
     <div class="page__menu" v-show="isVisible">
       <div class="page__menu-container">
         <div class="page__menu-wrapper">
-          <h3 class="page__menu-title">{{ menuText }} <a href=""
-              title="telegram">telegram</a></h3>
+          <h3 class="page__menu-title">{{ menuText }} <a href="https://t.me/kate_stoltz"
+              title="telegram" target="_blank">telegram</a></h3>
         </div>
         <div class="page__menu-close" @click="isVisible = !isVisible">
           <svg width="51" height="19" viewBox="0 0 51 19" fill="none" xmlns="http://www.w3.org/2000/svg">

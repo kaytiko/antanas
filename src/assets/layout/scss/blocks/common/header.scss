@@ -81,6 +81,7 @@
         align-items: flex-start;
         grid-column: 6 / -1;
         padding: vw(4px) 0 0 0;
+        cursor: pointer;
         
         @include tablet {
             grid-column: 14 / -1;
@@ -136,6 +137,7 @@
         top: 1rem;
         right: 0.625rem;
         width: rem(45px);
+        cursor: pointer;
 
         @include tablet {
             width: vw(45px);
